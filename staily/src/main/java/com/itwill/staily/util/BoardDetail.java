@@ -20,6 +20,7 @@ public class BoardDetail {
 	}
 
 	public BoardDetail(int bdNo, int bNo, String bdImage) {
+		super();
 		this.bdNo = bdNo;
 		this.bNo = bNo;
 		this.bdImage = bdImage;

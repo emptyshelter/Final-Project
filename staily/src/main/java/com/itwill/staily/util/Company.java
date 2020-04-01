@@ -18,6 +18,7 @@ public class Company {
 	}
 	
 	public Company(int mNo, int coNo, String coCheck) {
+		super();
 		this.mNo = mNo;
 		this.coNo = coNo;
 		this.coCheck = coCheck;

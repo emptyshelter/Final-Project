@@ -41,7 +41,7 @@ public class MapperTest {
 		//System.out.println(create);
 		
 		//상품 단위 테스트
-		//Product product = pdm.selectProductOne(1);
+		//Product product = pdm.selectProductOne(3);
 		//System.out.println(product);
 		
 		//boolean create = pdm.createProduct(new Product(4, 6, "BLOOM*IZ", 17000, "http://cafe.daum.net/official-izone", "���ѹα�", "�����", "n", 4234245));

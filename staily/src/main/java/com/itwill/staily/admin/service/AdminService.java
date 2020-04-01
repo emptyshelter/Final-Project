@@ -41,7 +41,5 @@ public interface AdminService {
 	public boolean updateProductDetail(int pdNo) throws Exception;
 	//상품 삭제
 	public boolean deleteProduct(int pNo) throws Exception;
-	
-	public boolean productConfirm(int pNo);
 }
 

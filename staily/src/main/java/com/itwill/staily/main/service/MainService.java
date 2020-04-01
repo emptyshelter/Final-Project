@@ -1,7 +1,6 @@
 package com.itwill.staily.main.service;
 
 import java.util.List;
-import java.util.Map;
 
 import com.itwill.staily.mypage.model.dto.Bookmark;
 import com.itwill.staily.util.Member;
@@ -17,11 +16,11 @@ public interface MainService {
 	public List<Work> selectByCategory(String category) throws Exception;
 	
 	//4.선택한 작품의 포스터,상품 출력하기
-	public Work selectByWork(int wNo) throws Exception;
+	public List<Work> selectByWork(int wNo) throws Exception;
 	//5.선택한 작품의 포스터,해당 회차의 상품들 출력하기
-	public List<Work> selectByEpisode(Map map) throws Exception;
+	public List<Work> selectByEpisode(int wNo, int episode) throws Exception;
 	//6.즐겨찾기 등록하기	
-	public int createBookmark(Map map) throws Exception;
+	public int createBookmark(Member member, Product product) throws Exception;
 	//7.즐겨찾기 제거하기
 	public int deleteBookmark(int bmNo) throws Exception;
 	//8.총회차 찾기
@@ -33,6 +32,4 @@ public interface MainService {
 	public void increaseProductView(int pNo);
 	//11.게시물 총 건수
 	public int selectProductCount();
-	//12.오늘의 작품 출력
-	public List<Work> selectTodayofWork();
 }

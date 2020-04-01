@@ -6,14 +6,11 @@ import com.itwill.staily.mypage.model.dto.Payment;
 
 public interface PaymentMapper {
 	
-	//결제 하나 선택
-	public Payment selectOne(int pyNo) throws Exception;
+	public Payment selectOne(int pyNo);
 	
-	//결제 리스트 출력
-	public List<Payment> selectList(int mNo) throws Exception;
+	public List<Payment> selectList(int mNo);
 	
-	//결제 추가
-	public boolean createPayment(Payment payment) throws Exception;
+	public int createPayment(Payment payment);
 	
-	
+	public int deletePayment(int py_no);
 }

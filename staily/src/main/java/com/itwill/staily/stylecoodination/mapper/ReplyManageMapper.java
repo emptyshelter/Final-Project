@@ -1,9 +1,7 @@
 package com.itwill.staily.stylecoodination.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-
 import com.itwill.staily.util.Board;
-@Mapper
+
 public interface ReplyManageMapper {
 	/******************* 답글쓰기 작업 *****************/
 	//기존의 답글 step 하나씩 미루기
