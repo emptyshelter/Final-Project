@@ -53,7 +53,7 @@ public class AdminController {
 		return "admin/index";
 	}
 	
-	@RequestMapping("/admin_member.do")
+	@RequestMapping("/admin_member")
 	public String memberAdminForm(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			List<Member> memberList = new ArrayList();
@@ -64,23 +64,28 @@ public class AdminController {
 		}
 		return "/admin/member";
 	}
-	@RequestMapping("/admin_delete.do")
+	@RequestMapping("/admin_delete")
 	public String memberAdminDelete(HttpServletRequest request) {
+		String result= "";
 		try {
 			int mNo= Integer.parseInt(request.getParameter("mNo"));
-			System.out.println(mNo+"뭐가문제냐아!");
-			adminService.deleteMember(mNo);
+			boolean delete = adminService.deleteMember(mNo);
+			if (delete) {
+				result= "true";	
+			}else {
+				result= "false";	
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "/";
+		return result;
 	}
 	@RequestMapping
 	public String memberAdminUpdate() {
 		
 		return "/admin/member";
 	}
-	@RequestMapping("/admin_product.do")
+	@RequestMapping("/admin_product")
 	public String productAdminForm(HttpServletRequest request) {
 		try {
 			List<Product> productList= new ArrayList();

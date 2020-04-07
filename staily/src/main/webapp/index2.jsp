@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/include/include_css.jsp"%>
-<%@ include file="/WEB-INF/views/include/include_js.jsp"%>
-<%@ include file="/WEB-INF/views/include/include_navbar.jsp"%>
 <%@ include file="/WEB-INF/views/include/tags.jspf"%>
 
 <html>
 <head>
+<%@ include file="/WEB-INF/views/include/include_css.jsp"%>
 </head>
 <body>
-
 	<!-- Wrapper -->
+<%@ include file="/WEB-INF/views/include/include_navbar.jsp"%>
 	<!-- Hero -->
 	<div id="hero" class="carousel slide carousel-fade"
 		data-ride="carousel">
@@ -707,7 +705,7 @@
 		
 	</div>
 	
-
+<%@ include file="/WEB-INF/views/include/include_js.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </html>

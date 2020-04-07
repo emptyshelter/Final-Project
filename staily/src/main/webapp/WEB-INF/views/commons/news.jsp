@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/include/include_css.jsp"%>
-<%@ include file="/WEB-INF/views/include/include_js.jsp"%>
 <%@ include file="/WEB-INF/views/include/tags.jspf"%>
 <html>
 <head>
+<%@ include file="/WEB-INF/views/include/include_css.jsp"%>
 
 </head>
 <body>
@@ -195,6 +194,7 @@
 				</div>
 			</div>
 		</div>
+		<%@ include file="/WEB-INF/views/include/include_js.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/include/include_footer.jsp"%>
 </html>
