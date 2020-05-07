@@ -286,11 +286,31 @@ function recommend(bNo) {
 		dataType: "json",
 		success: function(board) {
 			if(board.bContent === "login") {
-				var isOk = confirm("로그인 후 이용 가능합니다\n" +
-					  				"로그인 하시겠습니까?");
-				if(isOk) {
-					document.location.href="../login/login";
-				}
+//				var isOk = confirm("로그인 후 이용 가능합니다\n" +
+//					  				"로그인 하시겠습니까?");
+//				if(isOk) {
+//					document.location.href="../login/login";
+//				}
+				swal({
+					title: '회원 전용',
+					icon: 'info',
+					text: '로그인 후 이용 가능합니다\n 로그인 하시겠습니까?',
+					closeOnClickOutside: false,
+					buttons : {
+						cancle: {
+							text: "취소",
+							value: false
+						},
+						confirm : {
+							text: "로그인",
+							value: true
+						}
+					}
+				}).then((result) => {
+					if(result) {
+						location.href = '../login/login'
+					}
+				});
 					
 			} else {
 				if(board.bContent === "i") {

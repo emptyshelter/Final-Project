@@ -37,7 +37,6 @@ public class StyleCoodinationController {
 		}
 		
 		data = styleCoodinationService.findBoardAll(bType);
-		//boardCount = styleCoodinationService.findBoardCount();
 		replyCount = styleCoodinationService.findBoardReplyCount(bType);
 		
 		model.addAttribute("data", data);
@@ -58,7 +57,6 @@ public class StyleCoodinationController {
 		int replyCount = 0;
 		
 		data = styleCoodinationService.findBoardCategory(b);
-		//boardCount = styleCoodinationService.findBoardCategoryCount(b);
 		replyCount = styleCoodinationService.findBoardReplyCategoryCount(b);
 		
 		model.addAttribute("data", data);
