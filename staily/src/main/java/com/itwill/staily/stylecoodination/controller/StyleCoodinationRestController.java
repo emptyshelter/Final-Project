@@ -6,26 +6,18 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -46,8 +38,12 @@ public class StyleCoodinationRestController {
 		PrintWriter printWriter = null;
 		OutputStream out = null;
 		OutputStream out2 = null;
+		/*
+			MultipartFile 인터페이스는 스프링에서 업로드 한 파일을 표현할 때 사용되는 인터페이스로서, 
+			MultipartFile 인터페이스를 이용해서 업로드 한 파일의 이름, 실제 데이터, 파일 크기 등을 구할 수 있다.
+		 */
 		MultipartFile file = multiFile.getFile("upload");
-		
+		System.out.println(file.getContentType());
 		if(file != null){
 			if(file.getSize() > 0 ){
 				if(file.getContentType().toLowerCase().startsWith("image/")){
@@ -78,6 +74,7 @@ public class StyleCoodinationRestController {
                         out2 = new FileOutputStream(new File(uploadPath2));
                         out2.write(bytes);
                         
+                        //이 작업 왜 하고 있는 걸까요?
                         printWriter = resp.getWriter();
                         resp.setContentType("text/html");
                         String fileUrl = req.getContextPath() + "/img/" + fileName;
@@ -95,8 +92,8 @@ public class StyleCoodinationRestController {
                         e.printStackTrace();
                         
                     }finally{
-                        if(out2 != null){
-                            //out.close();
+                        if(out != null){
+                            out.close();
                             out2.close();
                         }
                         if(printWriter != null){
